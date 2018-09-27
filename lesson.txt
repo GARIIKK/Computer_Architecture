@@ -1,0 +1,18 @@
+reg-reg arch. преимущество  - скорость.
+Недостатки - множество load, store instuction.
+		Adressing mode
+register   		add r4 r3 r2  	 Regs[R4]<-Regs[R3]+Regs[R2]
+immediate  		add r4 r3 #5   	Regs[R4]<-Regs[R3] + 5
+displacement 		add r4 r3 100(r1)  Regs[R4]<-Regs[R3]+Mem[100 + Regs[R2]]
+register inderect       add r4 r3 (R1)     Regs[R4]<-Regs[R3]+Mem[Regs[R1]]
+RC relative             add r4 r3 100(PC)  Regs[R4]<-Regs[R3]+Mem[100 + PC]
+Scaled
+
+				Endsanness
+Little endian					Big endian
+
+31| DE	24|23  AD 16|15 BE  8|7	AF  0|      0| AF 7|8  BE 15|16 AD  23|24 DE  |31
+
+x86							Mips,ARM
+
+((a<<4)-(a<<1)-a)
